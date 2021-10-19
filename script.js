@@ -14,8 +14,8 @@ function isMobile() {
 
 window.addEventListener('resize', function() {
   isMobile()
-    user[0].style.transform = "translateX(" + 0 + "px)";
-    share[0].style.transform = "translateX(" + 0 + "px)";
+  user[0].style.transform = "translateX(" + 0 + "px)";
+  share[0].style.transform = "translateX(" + 0 + "px)";
 })
 
 function swipe() {
