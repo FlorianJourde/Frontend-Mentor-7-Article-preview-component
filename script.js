@@ -53,7 +53,7 @@ function tooltip() {
         share[0].style.vibility = "hidden"
         setTimeout(() => {
           share[0].style.opacity = 0
-        }, 2000);
+        }, 3000);
       }
     })
   }
