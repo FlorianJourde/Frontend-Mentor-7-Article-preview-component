@@ -1,0 +1,252 @@
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8em;
+  color: $very-dark-grayish-blue;
+  background-color: $light-grayish-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: $desaturated-dark-blue;
+  line-height: 1.2rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 50px 100px hsla(212, 23%, 69%, 0.3);
+}
+
+.first-box {
+  display: flex;
+  grid-area: first-box;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  background-image: url("images/drawers.jpg");
+  background-size: cover;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+
+.second-box {
+  display: flex;
+  grid-area: second-box;
+  padding: 2rem 2rem 1rem 2rem;
+  flex-direction: column;
+}
+
+.smooth {
+  transition: all .5s ease-out;
+}
+
+.third-box {
+  display: flex;
+  grid-area: third-box;
+  width: 100%;
+  overflow-y: hidden;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+
+  .user {
+    display: flex;
+    min-width: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .share {
+    visibility: visible;
+    //opacity: 1;
+    display: flex;
+    min-width: 100%;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: $very-dark-grayish-blue;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      margin-right: 1rem;
+      letter-spacing: 0.2rem;
+      color: $grayish-blue;
+    }
+
+    button {
+      background-color: $grayish-blue;
+
+      img{
+        filter: brightness(3);
+      }
+    }
+
+    .social-icons {
+      flex-grow: 1;
+
+      .icon {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .picture {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+
+  .info {
+    flex-grow: 1;
+
+    .name {
+      color: $very-dark-grayish-blue;
+      font-weight: 700;
+    }
+  }
+
+  button {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: $light-grayish-blue;
+    border-color: transparent;
+    cursor: pointer;
+  }
+}
+
+
+.third-box::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 1.5em;
+    line-height: 1.7rem;
+  }
+
+  p {
+    line-height: 1.2rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-areas: "first-box second-box" "first-box third-box";
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr auto;
+    width: 800px;
+  }
+
+  .first-box {
+    height: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: inherit;
+
+    .header {
+      border-top-right-radius: 0;
+      border-top-left-radius: inherit;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: inherit;
+      height: 100%;
+      background-position: left;
+    }
+  }
+
+  .second-box {
+    padding: 3rem 3rem 1rem 3rem;
+  }
+
+  .third-box {
+    padding: 1rem 3rem 3rem 3rem;
+    overflow-y: initial;
+
+    .user {
+      padding: 0;
+    }
+
+    .share {
+      visibility: visible;
+      opacity: 0;
+      min-width: fit-content;
+      position: relative;
+      left: -132px;
+      bottom: 70px;
+      border-radius: 10px;
+      box-shadow: 0 20px 50px hsla(212, 23%, 69%, 0.3);
+
+
+      .social-icons {
+        flex-grow: 0;
+      }
+
+      .icon:last-child {
+        margin-right: 0;
+      }
+
+      .button {
+        display: none;
+      }
+    }
+
+    .share::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 10px solid $very-dark-grayish-blue;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+
+    .button:hover {
+      background-color: $very-dark-grayish-blue;
+
+      img{
+        filter: brightness(3);
+      }
+    }
+  }
+}

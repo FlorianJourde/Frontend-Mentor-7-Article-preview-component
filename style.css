@@ -1,0 +1,224 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8em;
+  color: #48556a;
+  background-color: #ecf2f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #6d7f97;
+  line-height: 1.2rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 50px 100px rgba(158, 175, 194, 0.3);
+}
+
+.first-box {
+  display: flex;
+  grid-area: first-box;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  background-image: url("images/drawers.jpg");
+  background-size: cover;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.second-box {
+  display: flex;
+  grid-area: second-box;
+  padding: 2rem 2rem 1rem 2rem;
+  flex-direction: column;
+}
+
+.smooth {
+  transition: all 0.5s ease-out;
+}
+
+.third-box {
+  display: flex;
+  grid-area: third-box;
+  width: 100%;
+  overflow-y: hidden;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+.third-box .user {
+  display: flex;
+  min-width: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.third-box .share {
+  visibility: visible;
+  display: flex;
+  min-width: 100%;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #48556a;
+  border-bottom-right-radius: inherit;
+  border-bottom-left-radius: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+.third-box .share p {
+  margin-right: 1rem;
+  letter-spacing: 0.2rem;
+  color: #9eafc2;
+}
+.third-box .share button {
+  background-color: #9eafc2;
+}
+.third-box .share button img {
+  filter: brightness(3);
+}
+.third-box .share .social-icons {
+  flex-grow: 1;
+}
+.third-box .share .social-icons .icon {
+  margin-right: 1rem;
+}
+.third-box p {
+  margin: 0;
+}
+.third-box .picture {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.third-box .info {
+  flex-grow: 1;
+}
+.third-box .info .name {
+  color: #48556a;
+  font-weight: 700;
+}
+.third-box button {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.third-box::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 1.5em;
+    line-height: 1.7rem;
+  }
+
+  p {
+    line-height: 1.2rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-areas: "first-box second-box" "first-box third-box";
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr auto;
+    width: 800px;
+  }
+
+  .first-box {
+    height: 100%;
+    border-top-right-radius: 0;
+    border-top-left-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: inherit;
+  }
+  .first-box .header {
+    border-top-right-radius: 0;
+    border-top-left-radius: inherit;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: inherit;
+    height: 100%;
+    background-position: left;
+  }
+
+  .second-box {
+    padding: 3rem 3rem 1rem 3rem;
+  }
+
+  .third-box {
+    padding: 1rem 3rem 3rem 3rem;
+    overflow-y: initial;
+  }
+  .third-box .user {
+    padding: 0;
+  }
+  .third-box .share {
+    visibility: visible;
+    opacity: 0;
+    min-width: fit-content;
+    position: relative;
+    left: -132px;
+    bottom: 70px;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(158, 175, 194, 0.3);
+  }
+  .third-box .share .social-icons {
+    flex-grow: 0;
+  }
+  .third-box .share .icon:last-child {
+    margin-right: 0;
+  }
+  .third-box .share .button {
+    display: none;
+  }
+  .third-box .share::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 10px solid #48556a;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  .third-box .button:hover {
+    background-color: #48556a;
+  }
+  .third-box .button:hover img {
+    filter: brightness(3);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
